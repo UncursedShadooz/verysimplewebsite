@@ -69,5 +69,15 @@ def register():
             msg = 'You have successfully registered!'
     return render_template('register.html', msg=msg)
 
+@app.route('/submit', methods=['POST'])
+def submit():
+    first_input = request.form.get('first_input')
+    second_input = request.form.get('second_input')
+
+    if first_input != second_input:
+        return "Error: Inputs do not match!", 400
+        
+    return "Success! Inputs match."
+
 if __name__ == '__main__':
     app.run(debug=True)

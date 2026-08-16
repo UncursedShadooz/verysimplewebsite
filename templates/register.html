@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Register</title>
+</head>
+<body>
+
+    <div class="container">  <!-- Wrapper for form -->
+        <h2 class="word">Register</h2>
+        
+        <form action="{{ url_for('login') }}" method="post">
+            <div>{{ msg }}</div>
+            
+            <p>Enter Username</p>
+            <input class="textbox" type="text" name="username" placeholder="Enter Username" required>
+            <p>Enter Email</p>        
+            <input class="textbox" type="email" name="email" placeholder="Enter Email" required>
+            <p>Enter Password</p>     
+            <input class="textbox" type="password" name="password" placeholder="Enter Password" required>
+            <p>Confirm Password</p>
+            <input class="textbox" type="password" name="confirm password" placeholder="Confirm Password" required>
+
+            <br><button class="btn" type="submit">Register</button>
+        </form>
+
+        <p class="bottom">Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+    </div>
+
+</body>
+</html>
